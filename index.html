@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	</script>
+    <script type="text/javascript">
+      function disableButton(btn) {
+          document.getElementById(btn.id).disabled = true;
+      }
+  </script>
 	</head>
 <body>
 	<main>
+    <script type="text/javascript">
+      function disableButton(btn) {
+          document.getElementById(btn.id).disabled = true;
+      }
+    </script>
 
 		<h3>Project Magic</h3>
-		<button onclick="clickedMagic()">Press Me!</button>
-		<h1>This project has <span id="visits" onload="clickedMagicshow()"></span> votes</h1>
+    <input type="button" id="btn1" value="Vote" onclick="disableButton(this); clickedMagic()"/>
+		<h1>This project has <span id="visits"></span> votes</h1>
 
 		<h3>Project X</h3>
-		<button onclick="clickedX()">Press Me!</button>
+    <input type="button" id="btn2" value="Vote" onclick="disableButton(this); clickedX()"/>
 		<h1>This project has <span id="visitsX"></span> votes</h1>
 
 		<h3>Project Doge</h3>
-		<button onclick="clickedDoge()">Press Me!</button>
+    <input type="button" id="btn3" value="Vote" onclick="disableButton(this); clickedDoge()"/>
 		<h1>This project has <span id="visitsDoge"></span> votes</h1>
 
 
@@ -81,7 +90,25 @@ function clickedDoge() {
 }
 
 
+
 </script>
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
 
 </body>
 </html>
