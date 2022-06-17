@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+	<main>
+
+		<h3>Project Magic</h3>
+		<button id="magic-button">Vote</button>
+
+		<h3>Project X</h3>
+		<button id="x-button">Vote</button>
+
+		<h3>Project Doge</h3>
+		<button id="doge-button">Vote</button>
+
+
+
+
+		<script>
+			document.getElementById("magic-button").addEventListener("click", () => {
+  countapi.event('magic-button').then((result) => {
+    alert(`The magic button has been pressed ${result.value} times.`);
+  });
+})
+
+document.getElementById("x-button").addEventListener("click", () => {
+  countapi.event('magic-button').then((result) => {
+    alert(`The magic button has been pressed ${result.value} times.`);
+  });
+})
+
+document.getElementById("doge-button").addEventListener("click", () => {
+  countapi.event('magic-button').then((result) => {
+    alert(`The magic button has been pressed ${result.value} times.`);
+  });
+})
+		</script>
+
+
+</body>
+</html>
