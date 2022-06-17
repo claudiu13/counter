@@ -26,6 +26,16 @@
 <script>
 
 
+let xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/hit/default/5c6aad7-304c-4e40-8830-66e6c6bdd0bd");
+    xhr.send();
+    xhr.onload = function() {
+		document.querySelector("#visits").textContent = this.response.value;
+    }
+
+
+
+
 	function clickedMagic() {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api.countapi.xyz/hit/default/5c6aad7-304c-4e40-8830-66e6c6bdd0bd");
