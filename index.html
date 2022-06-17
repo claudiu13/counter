@@ -8,7 +8,7 @@
 
 		<h3>Project Magic</h3>
 		<button onclick="clickedMagic()">Press Me!</button>
-		<h1>This project has <span id="visits"></span> votes</h1>
+		<h1>This project has <span id="visits" onload="clickedMagicshow()"></span> votes</h1>
 
 		<h3>Project X</h3>
 		<button onclick="clickedX()">Press Me!</button>
@@ -21,18 +21,32 @@
 
 
 
+    <script>
+      function cb(response) {
+          document.getElementById('visits').innerText = response.value;
+      }
+      </script>
+      <script async src="https://api.countapi.xyz/get/default/5c6aad7-304c-4e40-8830-66e6c6bdd0bd?callback=cb"></script>
+
+
+      <script>
+        function db(response) {
+            document.getElementById('visitsX').innerText = response.value;
+        }
+        </script>
+        <script async src="https://api.countapi.xyz/get/default/51512a59-ca71-4713-845e-397a57044172?callback=db"></script>
+
+
+        <script>
+          function rb(response) {
+              document.getElementById('visitsDoge').innerText = response.value;
+          }
+          </script>
+          <script async src="https://api.countapi.xyz/get/default/10e5a817-b507-4296-8ffc-687bf506462e?callback=rb"></script>
+
 
 
 <script>
-
-
-let xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://api.countapi.xyz/hit/default/5c6aad7-304c-4e40-8830-66e6c6bdd0bd");
-    xhr.send();
-    xhr.onload = function() {
-		document.querySelector("#visits").textContent = this.response.value;
-    }
-
 
 
 
