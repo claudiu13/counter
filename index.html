@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+	</script>
+	</head>
 <body>
 	<main>
 
 		<h3>Project Magic</h3>
-		<button id="magic-button">Vote</button>
+		<button onclick="clickedMagic()">Press Me!</button>
+		<h1>This project has <span id="visits"></span> votes</h1>
 
 		<h3>Project X</h3>
-		<button id="x-button">Vote</button>
+		<button onclick="clickedX()">Press Me!</button>
+		<h1>This project has <span id="visitsX"></span> votes</h1>
 
 		<h3>Project Doge</h3>
-		<button id="doge-button">Vote</button>
+		<button onclick="clickedDoge()">Press Me!</button>
+		<h1>This project has <span id="visitsDoge"></span> votes</h1>
 
 
 
 
-		<script>
-			document.getElementById("magic-button").addEventListener("click", () => {
-  countapi.event('magic-button').then((result) => {
-    alert(`The magic button has been pressed ${result.value} times.`);
-  });
-})
 
-document.getElementById("x-button").addEventListener("click", () => {
-  countapi.event('magic-button').then((result) => {
-    alert(`The magic button has been pressed ${result.value} times.`);
-  });
-})
 
-document.getElementById("doge-button").addEventListener("click", () => {
-  countapi.event('magic-button').then((result) => {
-    alert(`The magic button has been pressed ${result.value} times.`);
-  });
-})
-		</script>
+<script>
 
+
+	function clickedMagic() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/hit/default/5c6aad7-304c-4e40-8830-66e6c6bdd0bd");
+    xhr.responseType = "json";
+    xhr.onload = function() {
+		document.querySelector("#visits").textContent = this.response.value;
+    }
+    xhr.send();
+}
+
+function clickedX() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/hit/default/51512a59-ca71-4713-845e-397a57044172");
+    xhr.responseType = "json";
+    xhr.onload = function() {
+		document.querySelector("#visitsX").textContent = this.response.value;
+    }
+    xhr.send();
+}
+
+function clickedDoge() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/hit/default/10e5a817-b507-4296-8ffc-687bf506462e");
+    xhr.responseType = "json";
+    xhr.onload = function() {
+		document.querySelector("#visitsDoge").textContent = this.response.value;
+    }
+    xhr.send();
+}
+
+
+</script>
 
 </body>
 </html>
